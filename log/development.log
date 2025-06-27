@@ -398,3 +398,230 @@ Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at
   
 ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
   
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:47:32 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 33ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:47:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-06-27 17:02:39.949047', '2025-06-27 17:02:39.949049') RETURNING "key" /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+Migrating to CreateGameRooms (20250627170235)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='FruitBox'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "game_rooms" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "room_code" varchar, "max_players" integer, "status" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250627170235') RETURNING "version" /*application='FruitBox'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mCACHE ActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+Migrating to CreatePlayers (20250627170244)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='FruitBox'*/[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "players" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "game_room_id" integer NOT NULL, "name" varchar, "score" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_871e26061f"
+FOREIGN KEY ("game_room_id")
+  REFERENCES "game_rooms" ("id")
+) /*application='FruitBox'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_players_on_game_room_id" ON "players" ("game_room_id") /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250627170244') RETURNING "version" /*application='FruitBox'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='FruitBox'*/[0m
+Migrating to CreateGameMoves (20250627170249)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='FruitBox'*/[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "game_moves" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "game_room_id" integer NOT NULL, "player_id" integer NOT NULL, "start_row" integer, "start_col" integer, "end_row" integer, "end_col" integer, "points_earned" integer, "board_state" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_2c9c772518"
+FOREIGN KEY ("game_room_id")
+  REFERENCES "game_rooms" ("id")
+, CONSTRAINT "fk_rails_453033e511"
+FOREIGN KEY ("player_id")
+  REFERENCES "players" ("id")
+) /*application='FruitBox'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_game_moves_on_game_room_id" ON "game_moves" ("game_room_id") /*application='FruitBox'*/[0m
+  [1m[35m (0.0ms)[0m  [1m[35mCREATE INDEX "index_game_moves_on_player_id" ON "game_moves" ("player_id") /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250627170249') RETURNING "version" /*application='FruitBox'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-06-27 13:06:32 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 22ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `multiplayer_path' for an instance of #<Class:0x0000000130b13678>)
+Caused by: NameError (undefined local variable or method `multiplayer_path' for an instance of #<Class:0x0000000130b13678>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `multiplayer_path' for an instance of #<Class:0x0000000130b13678>):
+    18:     
+    19:     <!-- Multiplayer Link -->
+    20:     <div class="text-center mb-6">
+    21:       <%= link_to multiplayer_path, class: "inline-block bg-purple-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-purple-600 transition-colors" do %>
+    22:         🎮 Play Multiplayer
+    23:       <% end %>
+    24:     </div>
+  
+app/views/game/index.html.erb:21
+
+Information for cause: NameError (undefined local variable or method `multiplayer_path' for an instance of #<Class:0x0000000130b13678>):
+  
+app/views/game/index.html.erb:21
+Started GET "/favicon.ico" for 127.0.0.1 at 2025-06-27 13:06:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-27 13:06:46 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `multiplayer_path' for an instance of #<Class:0x00000001388b5518>)
+Caused by: NameError (undefined local variable or method `multiplayer_path' for an instance of #<Class:0x00000001388b5518>)
+
+Information for: ActionView::Template::Error (undefined local variable or method `multiplayer_path' for an instance of #<Class:0x00000001388b5518>):
+    18:     
+    19:     <!-- Multiplayer Link -->
+    20:     <div class="text-center mb-6">
+    21:       <%= link_to multiplayer_path, class: "inline-block bg-purple-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-purple-600 transition-colors" do %>
+    22:         🎮 Play Multiplayer
+    23:       <% end %>
+    24:     </div>
+  
+app/views/game/index.html.erb:21
+
+Information for cause: NameError (undefined local variable or method `multiplayer_path' for an instance of #<Class:0x00000001388b5518>):
+  
+app/views/game/index.html.erb:21
+Started GET "/" for 127.0.0.1 at 2025-06-27 13:07:17 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 2.2ms)
+Completed 200 OK in 27ms (Views: 4.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 2.2ms)
+
+
+Started GET "/game/multiplayer" for 127.0.0.1 at 2025-06-27 13:07:18 -0400
+Processing by GameController#multiplayer as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/multiplayer.html.erb within layouts/application
+  Rendered game/multiplayer.html.erb within layouts/application (Duration: 22.4ms | GC: 1.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 22.7ms | GC: 1.5ms)
+Completed 200 OK in 58ms (Views: 21.8ms | ActiveRecord: 1.2ms (0 queries, 0 cached) | GC: 1.5ms)
+
+
+Started POST "/game/create_room" for 127.0.0.1 at 2025-06-27 13:07:27 -0400
+Processing by GameController#create_room as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "game_room"=>{"name"=>"test room", "max_players"=>"2"}, "commit"=>"Create Room"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:12:in `create_room'
+  [1m[36mGameRoom Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "game_rooms" WHERE "game_rooms"."name" = 'test room' LIMIT 1 /*action='create_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:12:in `create_room'
+  [1m[36mGameRoom Create (0.1ms)[0m  [1m[32mINSERT INTO "game_rooms" ("name", "room_code", "max_players", "status", "created_at", "updated_at") VALUES ('test room', 'LC28KA', 2, NULL, '2025-06-27 17:07:27.674922', '2025-06-27 17:07:27.674922') RETURNING "id" /*action='create_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:12:in `create_room'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:12:in `create_room'
+Redirected to http://127.0.0.1:3000/game/join/LC28KA
+Completed 302 Found in 37ms (ActiveRecord: 0.9ms (2 queries, 0 cached) | GC: 0.4ms)
+
+
+Started GET "/game/join/LC28KA" for 127.0.0.1 at 2025-06-27 13:07:27 -0400
+Processing by GameController#join_room as TURBO_STREAM
+  Parameters: {"room_code"=>"LC28KA"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'LC28KA' LIMIT 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:20:in `join_room'
+  Rendering layout layouts/application.html.erb
+  Rendering game/join_room.html.erb within layouts/application
+  [1m[36mPlayer Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/join_room.html.erb:12
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/join_room.html.erb:14
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 1[0m
+  ↳ app/models/game_room.rb:11:in `full?'
+  Rendered game/join_room.html.erb within layouts/application (Duration: 2.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 2.7ms | ActiveRecord: 0.4ms (4 queries, 1 cached) | GC: 0.5ms)
+
+
+Started GET "/game/room/LC28KA?player%5Bname%5D=Chris&commit=Join+Game" for 127.0.0.1 at 2025-06-27 13:07:35 -0400
+Processing by GameController#room as HTML
+  Parameters: {"player"=>{"name"=>"Chris"}, "commit"=>"Join Game", "room_code"=>"LC28KA"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'LC28KA' LIMIT 1 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:25:in `room'
+Completed 422 Unprocessable Content in 37ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Score is not a number):
+  
+app/controllers/game_controller.rb:29:in `room'
+Started GET "/game/join/LC28KA" for 127.0.0.1 at 2025-06-27 13:07:35 -0400
+Processing by GameController#join_room as HTML
+  Parameters: {"room_code"=>"LC28KA"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'LC28KA' LIMIT 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:20:in `join_room'
+  Rendering layout layouts/application.html.erb
+  Rendering game/join_room.html.erb within layouts/application
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/join_room.html.erb:12
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/join_room.html.erb:14
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 1[0m
+  ↳ app/models/game_room.rb:11:in `full?'
+  Rendered game/join_room.html.erb within layouts/application (Duration: 1.4ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.2ms)
+Completed 200 OK in 20ms (Views: 1.8ms | ActiveRecord: 0.1ms (4 queries, 1 cached) | GC: 0.2ms)
+
+
+Started GET "/game/room/LC28KA?player%5Bname%5D=chris2&commit=Join+Game" for 127.0.0.1 at 2025-06-27 13:07:42 -0400
+Processing by GameController#room as HTML
+  Parameters: {"player"=>{"name"=>"chris2"}, "commit"=>"Join Game", "room_code"=>"LC28KA"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'LC28KA' LIMIT 1 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:25:in `room'
+Completed 422 Unprocessable Content in 22ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 1.4ms)
+
+
+  
+ActiveRecord::RecordInvalid (Validation failed: Score is not a number):
+  
+app/controllers/game_controller.rb:29:in `room'
+Started GET "/game/join/LC28KA" for 127.0.0.1 at 2025-06-27 13:07:42 -0400
+Processing by GameController#join_room as HTML
+  Parameters: {"room_code"=>"LC28KA"}
+  [1m[36mGameRoom Load (0.4ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'LC28KA' LIMIT 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:20:in `join_room'
+  Rendering layout layouts/application.html.erb
+  Rendering game/join_room.html.erb within layouts/application
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/join_room.html.erb:12
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/join_room.html.erb:14
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 1[0m
+  ↳ app/models/game_room.rb:11:in `full?'
+  Rendered game/join_room.html.erb within layouts/application (Duration: 2.8ms | GC: 1.6ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 1.8ms)
+Completed 200 OK in 23ms (Views: 3.8ms | ActiveRecord: 0.4ms (4 queries, 1 cached) | GC: 3.2ms)
+
+
