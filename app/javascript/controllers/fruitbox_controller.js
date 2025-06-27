@@ -530,19 +530,13 @@ export default class extends Controller {
   }
   
   disableGameInteractions() {
-    // Remove event listeners from tiles
-    const tiles = this.boardTarget.querySelectorAll('[data-row]')
-    tiles.forEach(tile => {
-      tile.style.pointerEvents = 'none'
-      tile.style.opacity = '0.6'
-    })
-    
-    // Disable buttons
-    const buttons = this.element.querySelectorAll('button')
-    buttons.forEach(button => {
-      button.disabled = true
-      button.style.opacity = '0.5'
-      button.style.cursor = 'not-allowed'
-    })
+    this.gameActive = false
+    this.boardTarget.style.pointerEvents = 'none'
+    this.boardTarget.style.opacity = '0.5'
+  }
+  
+  test() {
+    console.log("Basic Stimulus test successful!")
+    alert("Basic Stimulus is working!")
   }
 }

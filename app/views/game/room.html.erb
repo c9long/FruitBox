@@ -8,7 +8,7 @@
           <p class="text-gray-600">Room Code: <span class="font-mono font-bold text-blue-600"><%= @game_room.room_code %></span></p>
         </div>
         <div class="text-right">
-          <p class="text-sm text-gray-500">Status: <span class="font-medium text-green-600"><%= @game_room.status.titleize %></span></p>
+          <p class="text-sm text-gray-500">Status: <span class="font-medium text-green-600"><%= (@game_room.status || 'waiting').titleize %></span></p>
           <p class="text-sm text-gray-500">Players: <%= @game_room.players.count %>/<%= @game_room.max_players %></p>
         </div>
       </div>
@@ -27,29 +27,68 @@
               </div>
               <div class="bg-gray-100 rounded-lg px-4 py-2">
                 <div class="text-sm text-gray-600">Room Status</div>
-                <div id="room-status" class="text-xl font-bold text-green-600"><%= @game_room.status.titleize %></div>
+                <div id="room-status" class="text-xl font-bold text-green-600"><%= (@game_room.status || 'waiting').titleize %></div>
               </div>
             </div>
           </div>
           
           <div id="fruitbox-board" data-controller="multiplayer-fruitbox" 
-               data-room-code="<%= @game_room.room_code %>"
-               data-player-id="<%= @player&.id %>"
-               data-player-name="<%= @player&.name %>"
+               data-multiplayer-fruitbox-room-code-value="<%= @game_room.room_code %>"
+               data-multiplayer-fruitbox-player-id-value="<%= @player&.id %>"
+               data-multiplayer-fruitbox-player-name-value="<%= @player&.name %>"
+               data-multiplayer-fruitbox-game-status-value="<%= @game_room.status %>"
                class="flex flex-col items-center">
-            <div data-multiplayer-fruitbox-target="board" class="grid grid-cols-10 gap-1">
-              <!-- Dynamic apple tiles will go here -->
-            </div>
-            <div class="flex gap-4 mt-4">
-              <button data-action="multiplayer-fruitbox#startGame" 
-                      class="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600 transition-colors">
-                Start Game
-              </button>
-              <button data-action="multiplayer-fruitbox#resetGame" 
-                      class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition-colors">
-                Reset Game
-              </button>
-            </div>
+            
+            <!-- Controller Status Indicator -->
+            <div id="controller-status" class="text-sm text-gray-500 mb-2">Loading controller...</div>
+            
+            <!-- Test Button -->
+            <button data-action="multiplayer-fruitbox#testConnection" class="px-4 py-2 bg-blue-500 text-white rounded mb-2">
+              Test Controller Connection
+            </button>
+            
+            <% if @game_room.status == 'playing' %>
+              <!-- Game Timer -->
+              <div class="mb-4 text-center">
+                <div class="text-2xl font-bold text-red-600" id="game-timer">Ready to play!</div>
+                <div class="text-sm text-gray-600">Click your first apple to start the timer</div>
+              </div>
+              
+              <!-- Game Board -->
+              <div data-multiplayer-fruitbox-target="board" class="grid grid-cols-10 gap-1 mb-4">
+                <!-- Dynamic apple tiles will go here -->
+              </div>
+              
+              <!-- Game Controls -->
+              <div class="flex gap-4">
+                <button id="hint-button" data-action="multiplayer-fruitbox#toggleHint" 
+                        class="px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-700 transition-colors">
+                  Show Hints
+                </button>
+                <button data-action="multiplayer-fruitbox#endGame" 
+                        class="px-4 py-2 bg-red-500 text-white font-semibold rounded hover:bg-red-600 transition-colors">
+                  End Game
+                </button>
+              </div>
+            <% else %>
+              <!-- Waiting for game to start -->
+              <div class="text-center">
+                <div class="text-xl font-bold text-gray-600 mb-4">Waiting for game to start...</div>
+                <div class="flex gap-4">
+                  <% if @game_room.can_start? && @game_room.players.first == @player %>
+                    <%= button_to "Start Game", start_game_path(@game_room.room_code, player_id: @player.id), method: :post, class: "px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600 transition-colors" %>
+                  <% else %>
+                    <button disabled class="px-4 py-2 bg-gray-400 text-white font-semibold rounded cursor-not-allowed">
+                      <% if !@game_room.can_start? %>
+                        Need More Players
+                      <% else %>
+                        Waiting for Host
+                      <% end %>
+                    </button>
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
           </div>
         </div>
       </div>

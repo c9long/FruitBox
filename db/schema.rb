@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_06_27_170249) do
+ActiveRecord::Schema[8.0].define(version: 2025_06_27_190421) do
+  create_table "game_boards", force: :cascade do |t|
+    t.string "room_code", null: false
+    t.text "board_state", null: false
+    t.datetime "created_at", null: false
+    t.index ["room_code"], name: "index_game_boards_on_room_code"
+  end
+
   create_table "game_moves", force: :cascade do |t|
     t.integer "game_room_id", null: false
     t.integer "player_id", null: false
@@ -35,6 +42,20 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_170249) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "player_game_states", force: :cascade do |t|
+    t.integer "player_id", null: false
+    t.string "room_code"
+    t.text "board_state"
+    t.integer "score"
+    t.integer "time_remaining"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "finished"
+    t.integer "final_score"
+    t.boolean "needs_new_board"
+    t.index ["player_id"], name: "index_player_game_states_on_player_id"
+  end
+
   create_table "players", force: :cascade do |t|
     t.integer "game_room_id", null: false
     t.string "name"
@@ -46,5 +67,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_06_27_170249) do
 
   add_foreign_key "game_moves", "game_rooms"
   add_foreign_key "game_moves", "players"
+  add_foreign_key "player_game_states", "players"
   add_foreign_key "players", "game_rooms"
 end

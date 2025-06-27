@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import FruitboxController from "./fruitbox_controller"
 application.register("fruitbox", FruitboxController)
+
+import MultiplayerFruitboxController from "./multiplayer_fruitbox_controller"
+application.register("multiplayer-fruitbox", MultiplayerFruitboxController)
