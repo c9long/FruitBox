@@ -1,0 +1,400 @@
+  [1m[35m (101.2ms)[0m  [1m[35mCREATE DATABASE "fruit_box_development" ENCODING = 'unicode' /*application='FruitBox'*/[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='FruitBox'*/[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='FruitBox'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+Started GET "/" for 127.0.0.1 at 2025-06-27 10:29:22 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 0.0ms)
+Completed 200 OK in 68ms (Views: 7.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.3ms)
+
+
+Started GET "/assets/application-8b441ae0.css" for 127.0.0.1 at 2025-06-27 10:29:23 -0400
+Started GET "/assets/application-b94e4fc0.js" for 127.0.0.1 at 2025-06-27 10:29:23 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 10:34:59 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | GC: 0.0ms)
+Completed 200 OK in 48ms (Views: 9.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/application-fab0a99a.js" for 127.0.0.1 at 2025-06-27 10:34:59 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 10:43:05 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 3.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/application-7a4418c4.css" for 127.0.0.1 at 2025-06-27 10:43:05 -0400
+Started GET "/assets/application.tailwind-ee41ae41.css" for 127.0.0.1 at 2025-06-27 10:43:05 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 10:43:05 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 10:45:21 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 42ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.4ms)
+
+
+Started GET "/assets/application-f527c5e4.js" for 127.0.0.1 at 2025-06-27 10:45:21 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 10:45:21 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 10:45:39 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 34ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 10:45:39 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 10:48:09 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 2.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/assets/application-b41ca83c.js" for 127.0.0.1 at 2025-06-27 10:48:09 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 10:48:09 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 10:48:16 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 1.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 10:48:16 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 10:51:07 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/application-4cca568c.js" for 127.0.0.1 at 2025-06-27 10:51:07 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 10:51:07 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 10:53:57 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 41ms (Views: 3.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/application-dd623eb5.js" for 127.0.0.1 at 2025-06-27 10:53:57 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 10:53:57 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:03:02 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 3.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/assets/application-84057f10.js" for 127.0.0.1 at 2025-06-27 11:03:02 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:03:02 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:04:51 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.6ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 2.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/application-0a9579db.js" for 127.0.0.1 at 2025-06-27 11:04:51 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:04:51 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:06:10 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.8ms | GC: 0.0ms)
+Completed 200 OK in 30ms (Views: 3.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.1ms)
+
+
+Started GET "/assets/application-43f1d53d.css" for 127.0.0.1 at 2025-06-27 11:06:10 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:06:10 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:06:41 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.7ms)
+
+
+Started GET "/assets/application-4fab035d.css" for 127.0.0.1 at 2025-06-27 11:06:41 -0400
+Started GET "/assets/application-da2a2ea8.js" for 127.0.0.1 at 2025-06-27 11:06:41 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:06:41 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:10:08 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.7ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 1.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/application-62daee8d.js" for 127.0.0.1 at 2025-06-27 11:10:08 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:10:08 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:12:49 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 3.2ms)
+
+
+Started GET "/assets/application-fb0eb1c0.js" for 127.0.0.1 at 2025-06-27 11:12:49 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:12:49 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:17:14 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.1ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 2.0ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:17:14 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:20:12 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:20:12 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:25:58 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 27ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:25:58 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:26:13 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:26:14 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:26:52 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:26:53 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:29:43 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.4ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:29:43 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:29:58 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 36ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:29:58 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:30:43 -0400
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:30:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/assets/application-d7292041.js.map" for 127.0.0.1 at 2025-06-27 11:30:43 -0400
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:31:23 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 1.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:31:23 -0400
+Started GET "/assets/tailwindcss" for 127.0.0.1 at 2025-06-27 11:31:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:32:01 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 1.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:32:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:35:10 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.2ms)
+Completed 200 OK in 24ms (Views: 2.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:35:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:36:47 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:36:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:37:49 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | GC: 0.0ms)
+Completed 200 OK in 26ms (Views: 0.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:37:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:38:11 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 21ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:38:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:38:38 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.9ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 2.4ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.5ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:38:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:39:30 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.5ms | GC: 0.3ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.3ms)
+Completed 200 OK in 26ms (Views: 2.3ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:39:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Writing application-23a47820.js.map
+Writing application-2c150c55.css
+Writing application-fdb61fee.js
+Writing application.tailwind-ee41ae41.css
+Writing stimulus.min-4b1e420e.js
+Writing stimulus-d59b3b7f.js
+Writing stimulus.min-2395e199.js.map
+Writing stimulus-importmap-autoloader-64cc03e1.js
+Writing stimulus-autoloader-9d447422.js
+Writing stimulus-loading-1fc53fe7.js
+Writing turbo.min-5f3b7fda.js.map
+Writing turbo-a1e3a50a.js
+Writing turbo.min-3a2e143f.js
+Writing actiontext.esm-f1c04d34.js
+Writing actiontext-a4ee937e.js
+Writing trix-4b540cb5.js
+Writing trix-65afdb1d.css
+Writing action_cable-5212cfee.js
+Writing actioncable.esm-e0ec9819.js
+Writing actioncable-ac25813f.js
+Writing activestorage.esm-f2909226.js
+Writing activestorage-32201f68.js
+Writing rails-ujs.esm-e925103b.js
+Writing rails-ujs-20eaf715.js
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:40:23 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 31ms (Views: 1.5ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:40:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/" for 127.0.0.1 at 2025-06-27 11:42:51 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 22ms (Views: 1.7ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 11:42:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  

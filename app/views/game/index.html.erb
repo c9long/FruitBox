@@ -1,0 +1,29 @@
+<div class="min-h-screen flex flex-col items-center justify-center bg-green-100">
+  <div class="w-full max-w-4xl">
+    <!-- Timer and Score Section -->
+    <div class="text-center mb-6">
+      <div class="flex justify-center gap-8">
+        <div class="inline-block bg-white rounded-lg shadow-lg px-6 py-3">
+          <div class="text-sm text-gray-600 mb-1">Time Remaining</div>
+          <div id="timer" class="text-4xl font-bold text-red-600">01:30</div>
+        </div>
+        <div class="inline-block bg-white rounded-lg shadow-lg px-6 py-3">
+          <div class="text-sm text-gray-600 mb-1">Score</div>
+          <div id="score" class="text-4xl font-bold text-blue-600">0</div>
+        </div>
+      </div>
+    </div>
+    
+    <h1 class="text-4xl font-bold mb-8 text-center">FruitBox</h1>
+    <div id="fruitbox-board" data-controller="fruitbox" class="bg-white rounded shadow p-8 flex flex-col items-center">
+      <!-- Game board will be rendered here by Stimulus -->
+      <div data-fruitbox-target="board" class="grid grid-cols-10 gap-1">
+        <!-- Dynamic apple tiles will go here -->
+      </div>
+      <div class="flex gap-4 mt-4">
+        <button data-action="fruitbox#reset" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded hover:bg-blue-600 transition-colors" style="background-color: #3b82f6; color: white; font-weight: 600;">Reset Game</button>
+        <button data-action="fruitbox#toggleHints" class="px-4 py-2 bg-green-500 text-white font-semibold rounded hover:bg-green-600 transition-colors" style="background-color: #10b981; color: white; font-weight: 600;">Show Hints</button>
+      </div>
+    </div>
+  </div>
+</div>
