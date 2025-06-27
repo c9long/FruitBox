@@ -380,13 +380,13 @@ export default class extends Controller {
       console.error("Error notifying server of game completion:", error)
     }
     
-    // Show final score
-    alert(`Game Over! Your final score: ${this.score}`)
+    // Show all possible solutions when timer runs out
+    this.showHints()
     
     // Keep player in the lobby - don't redirect
     console.log("Game ended, staying in lobby to wait for other player")
     
-    // Optionally, you could show a "waiting for other player" message
+    // Show a "waiting for other player" message
     const gameContainer = document.querySelector('.game-container')
     if (gameContainer) {
       const waitingMessage = document.createElement('div')
@@ -395,6 +395,7 @@ export default class extends Controller {
         <h3 class="text-lg font-bold text-blue-800">Game Complete!</h3>
         <p class="text-blue-600">Your final score: ${this.score}</p>
         <p class="text-sm text-blue-500 mt-2">Waiting for other player to finish...</p>
+        <p class="text-sm text-green-600 mt-1">All possible moves are highlighted above!</p>
       `
       gameContainer.appendChild(waitingMessage)
     }
@@ -459,28 +460,6 @@ export default class extends Controller {
     }
   }
   
-  toggleHint() {
-    this.hintMode = !this.hintMode
-    
-    if (this.hintMode) {
-      this.showHints()
-    } else {
-      this.hideHints()
-    }
-    
-    // Update hint button appearance
-    const hintButton = document.getElementById('hint-button')
-    if (hintButton) {
-      if (this.hintMode) {
-        hintButton.textContent = 'Hide Hints'
-        hintButton.className = 'px-4 py-2 bg-red-600 text-white font-semibold rounded hover:bg-red-700 transition-colors'
-      } else {
-        hintButton.textContent = 'Show Hints'
-        hintButton.className = 'px-4 py-2 bg-green-600 text-white font-semibold rounded hover:bg-green-700 transition-colors'
-      }
-    }
-  }
-  
   showHints() {
     this.hideHints() // Clear any existing hints first
     
@@ -488,8 +467,24 @@ export default class extends Controller {
     
     // Check if there are no moves available
     if (solutions.length === 0) {
-      console.log("No moves available, showing no-moves message")
-      this.showNoMovesMessage()
+      console.log("No moves available")
+      
+      // Only request new board if game is still active (timer hasn't run out)
+      if (this.timeRemaining > 0) {
+        console.log("Game still active, requesting new board")
+        this.showNoMovesMessage()
+      } else {
+        console.log("Game ended, showing no moves message without requesting new board")
+        // Show a message that there are no moves available
+        let messageElement = document.getElementById('no-moves-message')
+        if (!messageElement) {
+          messageElement = document.createElement('div')
+          messageElement.id = 'no-moves-message'
+          messageElement.className = 'text-lg font-bold text-orange-600 mb-4 text-center'
+          this.element.insertBefore(messageElement, this.boardTarget)
+        }
+        messageElement.textContent = 'No moves available on this board!'
+      }
       return
     }
     

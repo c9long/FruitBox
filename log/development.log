@@ -28943,3 +28943,699 @@ Returning JSON: {:status=>"playing", :players_count=>2, :max_players=>2, :can_st
 Completed 200 OK in 38ms (Views: 0.1ms | ActiveRecord: 0.2ms (4 queries, 2 cached) | GC: 0.0ms)
 
 
+Writing application-b09efd7b.js.map
+Writing application-40ded01f.js
+Started GET "/game/status/SZW54T" for 127.0.0.1 at 2025-06-27 15:39:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='FruitBox'*/[0m
+Processing by GameController#game_status as */*
+  Parameters: {"room_code"=>"SZW54T"}
+  [1m[36mGameRoom Load (1.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'SZW54T' LIMIT 1 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:85:in `game_status'
+Game status check for room: test room
+Room status: playing
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 30 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:89:in `game_status'
+Players count: 2
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 30[0m
+  ↳ app/controllers/game_controller.rb:93:in `game_status'
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 30[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+Returning JSON: {:status=>"playing", :players_count=>2, :max_players=>2, :can_start=>true}
+Completed 200 OK in 48ms (Views: 0.2ms | ActiveRecord: 2.1ms (4 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/game/status/SZW54T" for 127.0.0.1 at 2025-06-27 15:39:39 -0400
+Processing by GameController#game_status as */*
+  Parameters: {"room_code"=>"SZW54T"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'SZW54T' LIMIT 1 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:85:in `game_status'
+Game status check for room: test room
+Room status: playing
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 30 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:89:in `game_status'
+Players count: 2
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 30[0m
+  ↳ app/controllers/game_controller.rb:93:in `game_status'
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 30[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+Returning JSON: {:status=>"playing", :players_count=>2, :max_players=>2, :can_start=>true}
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 0.2ms (4 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/game/status/SZW54T" for 127.0.0.1 at 2025-06-27 15:39:42 -0400
+Processing by GameController#game_status as */*
+  Parameters: {"room_code"=>"SZW54T"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'SZW54T' LIMIT 1 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:85:in `game_status'
+Game status check for room: test room
+Room status: playing
+  [1m[36mPlayer Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 30 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:89:in `game_status'
+Players count: 2
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 30[0m
+  ↳ app/controllers/game_controller.rb:93:in `game_status'
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 30[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+Returning JSON: {:status=>"playing", :players_count=>2, :max_players=>2, :can_start=>true}
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 0.2ms (4 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/game/multiplayer" for 127.0.0.1 at 2025-06-27 15:39:44 -0400
+Processing by GameController#multiplayer as HTML
+Running cleanup before action...
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:62:in `cleanup_old_rooms'
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 30 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:20:in `empty?'
+  [1m[36mPlayer Maximum (0.0ms)[0m  [1m[34mSELECT MAX("players"."updated_at") FROM "players" WHERE "players"."game_room_id" = 30 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:25:in `last_activity'
+  [1m[36mGameMove Maximum (0.0ms)[0m  [1m[34mSELECT MAX("game_moves"."created_at") FROM "game_moves" WHERE "game_moves"."game_room_id" = 30 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:26:in `last_activity'
+Cleaning up 1 rooms: test room
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."id" = 30 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mPlayer Load (0.6ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 30 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mGameMove Load (0.1ms)[0m  [1m[34mSELECT "game_moves".* FROM "game_moves" WHERE "game_moves"."player_id" = 51 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mPlayerGameState Load (0.1ms)[0m  [1m[34mSELECT "player_game_states".* FROM "player_game_states" WHERE "player_game_states"."player_id" = 51 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mPlayerGameState Destroy (0.1ms)[0m  [1m[31mDELETE FROM "player_game_states" WHERE "player_game_states"."id" = 28 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mPlayerGameState Destroy (0.0ms)[0m  [1m[31mDELETE FROM "player_game_states" WHERE "player_game_states"."id" = 29 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mPlayerGameState Destroy (0.0ms)[0m  [1m[31mDELETE FROM "player_game_states" WHERE "player_game_states"."id" = 30 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mPlayer Destroy (0.1ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = 51 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mGameMove Load (0.1ms)[0m  [1m[34mSELECT "game_moves".* FROM "game_moves" WHERE "game_moves"."player_id" = 52 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mPlayerGameState Load (0.0ms)[0m  [1m[34mSELECT "player_game_states".* FROM "player_game_states" WHERE "player_game_states"."player_id" = 52 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mPlayer Destroy (0.1ms)[0m  [1m[31mDELETE FROM "players" WHERE "players"."id" = 52 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mGameMove Load (0.0ms)[0m  [1m[34mSELECT "game_moves".* FROM "game_moves" WHERE "game_moves"."game_room_id" = 30 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mGameBoard Load (0.0ms)[0m  [1m[34mSELECT "game_boards".* FROM "game_boards" WHERE "game_boards"."room_code" = 'SZW54T' /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mGameBoard Destroy (0.0ms)[0m  [1m[31mDELETE FROM "game_boards" WHERE "game_boards"."id" = 35 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mGameBoard Destroy (0.0ms)[0m  [1m[31mDELETE FROM "game_boards" WHERE "game_boards"."id" = 36 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mGameBoard Destroy (0.0ms)[0m  [1m[31mDELETE FROM "game_boards" WHERE "game_boards"."id" = 37 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mGameRoom Destroy (0.0ms)[0m  [1m[31mDELETE FROM "game_rooms" WHERE "game_rooms"."id" = 30 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:67:in `cleanup_old_rooms'
+Cleaned up 1 rooms
+  Rendering layout layouts/application.html.erb
+  Rendering game/multiplayer.html.erb within layouts/application
+  [1m[36mGameRoom Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "game_rooms" LIMIT 1 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/multiplayer.html.erb:15
+  Rendered game/multiplayer.html.erb within layouts/application (Duration: 4.2ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.7ms | GC: 0.0ms)
+Completed 200 OK in 78ms (Views: 6.0ms | ActiveRecord: 2.8ms (22 queries, 0 cached) | GC: 12.3ms)
+
+
+Started GET "/game/multiplayer" for 127.0.0.1 at 2025-06-27 15:39:44 -0400
+Processing by GameController#multiplayer as HTML
+Running cleanup before action...
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:62:in `cleanup_old_rooms'
+Cleaned up 0 rooms
+  Rendering layout layouts/application.html.erb
+  Rendering game/multiplayer.html.erb within layouts/application
+  [1m[36mGameRoom Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "game_rooms" LIMIT 1 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/multiplayer.html.erb:15
+  Rendered game/multiplayer.html.erb within layouts/application (Duration: 1.3ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 1.6ms | ActiveRecord: 0.1ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 15:39:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/game/multiplayer" for 127.0.0.1 at 2025-06-27 15:39:45 -0400
+Processing by GameController#multiplayer as HTML
+Running cleanup before action...
+  [1m[36mGameRoom Load (0.2ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:62:in `cleanup_old_rooms'
+Cleaned up 0 rooms
+  Rendering layout layouts/application.html.erb
+  Rendering game/multiplayer.html.erb within layouts/application
+  [1m[36mGameRoom Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "game_rooms" LIMIT 1 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/multiplayer.html.erb:15
+  Rendered game/multiplayer.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | GC: 0.0ms)
+Completed 200 OK in 38ms (Views: 2.2ms | ActiveRecord: 0.3ms (2 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 15:39:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/game/create_room" for 127.0.0.1 at 2025-06-27 15:39:47 -0400
+Processing by GameController#create_room as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "game_room"=>{"name"=>"test room", "max_players"=>"2"}, "commit"=>"Create Room"}
+Running cleanup before action...
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" /*action='create_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:62:in `cleanup_old_rooms'
+Cleaned up 0 rooms
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:14:in `create_room'
+  [1m[36mGameRoom Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "game_rooms" WHERE "game_rooms"."name" = 'test room' LIMIT 1 /*action='create_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:14:in `create_room'
+  [1m[36mGameRoom Create (0.1ms)[0m  [1m[32mINSERT INTO "game_rooms" ("name", "room_code", "max_players", "status", "created_at", "updated_at") VALUES ('test room', 'EWL1L3', 2, NULL, '2025-06-27 19:39:47.588634', '2025-06-27 19:39:47.588634') RETURNING "id" /*action='create_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:14:in `create_room'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:14:in `create_room'
+Redirected to http://127.0.0.1:3000/game/join/EWL1L3
+Completed 302 Found in 37ms (ActiveRecord: 0.7ms (3 queries, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/game/join/EWL1L3" for 127.0.0.1 at 2025-06-27 15:39:47 -0400
+Processing by GameController#join_room as TURBO_STREAM
+  Parameters: {"room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:22:in `join_room'
+  Rendering layout layouts/application.html.erb
+  Rendering game/join_room.html.erb within layouts/application
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/join_room.html.erb:13
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/join_room.html.erb:19
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:12:in `full?'
+  Rendered game/join_room.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 200 OK in 24ms (Views: 2.5ms | ActiveRecord: 0.2ms (4 queries, 1 cached) | GC: 0.2ms)
+
+
+Started POST "/game/join/EWL1L3" for 127.0.0.1 at 2025-06-27 15:39:51 -0400
+Processing by GameController#join_game as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "player"=>{"name"=>"chris"}, "commit"=>"Join Game", "room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:33:in `join_game'
+Join game attempt for room: test room
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:36:in `join_game'
+Room current players: 0
+Room max players: 2
+Player params: {"name"=>"chris"}
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:12:in `full?'
+  [1m[36mPlayer Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "players" WHERE "players"."name" = 'chris' AND "players"."game_room_id" = 31 LIMIT 1 /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:48:in `join_game'
+Player valid? true
+  [1m[36mCACHE Player Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "players" WHERE "players"."name" = 'chris' AND "players"."game_room_id" = 31 LIMIT 1[0m
+  ↳ app/controllers/game_controller.rb:49:in `join_game'
+  [1m[36mCACHE Player Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "players" WHERE "players"."name" = 'chris' AND "players"."game_room_id" = 31 LIMIT 1[0m
+  ↳ app/controllers/game_controller.rb:51:in `join_game'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:51:in `join_game'
+  [1m[36mPlayer Create (0.5ms)[0m  [1m[32mINSERT INTO "players" ("game_room_id", "name", "score", "created_at", "updated_at") VALUES (31, 'chris', 0, '2025-06-27 19:39:51.339922', '2025-06-27 19:39:51.339922') RETURNING "id" /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:51:in `join_game'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:51:in `join_game'
+Player saved successfully with ID: 53
+Redirected to http://127.0.0.1:3000/game/waiting/EWL1L3/53
+Completed 302 Found in 39ms (ActiveRecord: 0.7ms (7 queries, 3 cached) | GC: 0.4ms)
+
+
+Started GET "/game/waiting/EWL1L3/53" for 127.0.0.1 at 2025-06-27 15:39:51 -0400
+Processing by GameController#waiting_room as TURBO_STREAM
+  Parameters: {"room_code"=>"EWL1L3", "player_id"=>"53"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:61:in `waiting_room'
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 AND "players"."id" = 53 LIMIT 1 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:62:in `waiting_room'
+  Rendering layout layouts/application.html.erb
+  Rendering game/waiting_room.html.erb within layouts/application
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/waiting_room.html.erb:26
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/waiting_room.html.erb:32
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+  Rendered game/waiting_room.html.erb within layouts/application (Duration: 1.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 2.0ms | ActiveRecord: 0.2ms (5 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2025-06-27 15:39:58 -0400
+Processing by GameController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering game/index.html.erb within layouts/application
+  Rendered game/index.html.erb within layouts/application (Duration: 0.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | GC: 0.0ms)
+Completed 200 OK in 25ms (Views: 1.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 15:39:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/game/multiplayer" for 127.0.0.1 at 2025-06-27 15:39:59 -0400
+Processing by GameController#multiplayer as HTML
+Running cleanup before action...
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:62:in `cleanup_old_rooms'
+  [1m[36mPlayer Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:20:in `empty?'
+  [1m[36mPlayer Maximum (0.1ms)[0m  [1m[34mSELECT MAX("players"."updated_at") FROM "players" WHERE "players"."game_room_id" = 31 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:25:in `last_activity'
+  [1m[36mGameMove Maximum (0.1ms)[0m  [1m[34mSELECT MAX("game_moves"."created_at") FROM "game_moves" WHERE "game_moves"."game_room_id" = 31 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:26:in `last_activity'
+Cleaned up 0 rooms
+  Rendering layout layouts/application.html.erb
+  Rendering game/multiplayer.html.erb within layouts/application
+  [1m[36mGameRoom Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "game_rooms" LIMIT 1 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/multiplayer.html.erb:15
+  [1m[36mCACHE GameRoom Load (0.0ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms"[0m
+  ↳ app/views/game/multiplayer.html.erb:17
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/views/game/multiplayer.html.erb:21
+  Rendered game/multiplayer.html.erb within layouts/application (Duration: 3.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | GC: 0.0ms)
+Completed 200 OK in 44ms (Views: 3.6ms | ActiveRecord: 0.4ms (7 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/game/join/ROOM_CODE?room_code=EWL1L3&commit=Join+Room" for 127.0.0.1 at 2025-06-27 15:40:03 -0400
+Processing by GameController#join_room as HTML
+  Parameters: {"room_code"=>"ROOM_CODE", "commit"=>"Join Room"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'ROOM_CODE' LIMIT 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:22:in `join_room'
+Redirected to http://127.0.0.1:3000/game/multiplayer
+Completed 302 Found in 48ms (ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/game/multiplayer" for 127.0.0.1 at 2025-06-27 15:40:03 -0400
+Processing by GameController#multiplayer as HTML
+Running cleanup before action...
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:62:in `cleanup_old_rooms'
+  [1m[36mPlayer Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:20:in `empty?'
+  [1m[36mPlayer Maximum (0.0ms)[0m  [1m[34mSELECT MAX("players"."updated_at") FROM "players" WHERE "players"."game_room_id" = 31 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:25:in `last_activity'
+  [1m[36mGameMove Maximum (0.0ms)[0m  [1m[34mSELECT MAX("game_moves"."created_at") FROM "game_moves" WHERE "game_moves"."game_room_id" = 31 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:26:in `last_activity'
+Cleaned up 0 rooms
+  Rendering layout layouts/application.html.erb
+  Rendering game/multiplayer.html.erb within layouts/application
+  [1m[36mGameRoom Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "game_rooms" LIMIT 1 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/multiplayer.html.erb:15
+  [1m[36mCACHE GameRoom Load (0.0ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms"[0m
+  ↳ app/views/game/multiplayer.html.erb:17
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/views/game/multiplayer.html.erb:21
+  Rendered game/multiplayer.html.erb within layouts/application (Duration: 4.7ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | GC: 0.0ms)
+Completed 200 OK in 32ms (Views: 5.2ms | ActiveRecord: 0.3ms (7 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/game/multiplayer" for 127.0.0.1 at 2025-06-27 15:40:04 -0400
+Processing by GameController#multiplayer as HTML
+Running cleanup before action...
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:62:in `cleanup_old_rooms'
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:20:in `empty?'
+  [1m[36mPlayer Maximum (0.0ms)[0m  [1m[34mSELECT MAX("players"."updated_at") FROM "players" WHERE "players"."game_room_id" = 31 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:25:in `last_activity'
+  [1m[36mGameMove Maximum (0.0ms)[0m  [1m[34mSELECT MAX("game_moves"."created_at") FROM "game_moves" WHERE "game_moves"."game_room_id" = 31 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:26:in `last_activity'
+Cleaned up 0 rooms
+  Rendering layout layouts/application.html.erb
+  Rendering game/multiplayer.html.erb within layouts/application
+  [1m[36mGameRoom Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "game_rooms" LIMIT 1 /*action='multiplayer',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/multiplayer.html.erb:15
+  [1m[36mCACHE GameRoom Load (0.0ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms"[0m
+  ↳ app/views/game/multiplayer.html.erb:17
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/views/game/multiplayer.html.erb:21
+  Rendered game/multiplayer.html.erb within layouts/application (Duration: 3.6ms | GC: 1.1ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | GC: 1.1ms)
+Completed 200 OK in 40ms (Views: 4.0ms | ActiveRecord: 0.2ms (7 queries, 2 cached) | GC: 1.1ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 15:40:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/game/join/EWL1L3?room_code=EWL1L3&commit=Join+Room" for 127.0.0.1 at 2025-06-27 15:40:05 -0400
+Processing by GameController#join_room as HTML
+  Parameters: {"room_code"=>"EWL1L3", "commit"=>"Join Room"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:22:in `join_room'
+  Rendering layout layouts/application.html.erb
+  Rendering game/join_room.html.erb within layouts/application
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/join_room.html.erb:13
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 /*action='join_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/join_room.html.erb:19
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:12:in `full?'
+  Rendered game/join_room.html.erb within layouts/application (Duration: 3.0ms | GC: 1.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 1.0ms)
+Completed 200 OK in 38ms (Views: 3.3ms | ActiveRecord: 0.2ms (4 queries, 1 cached) | GC: 1.0ms)
+
+
+Started POST "/game/join/EWL1L3" for 127.0.0.1 at 2025-06-27 15:40:07 -0400
+Processing by GameController#join_game as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "player"=>{"name"=>"chris2"}, "commit"=>"Join Game", "room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:33:in `join_game'
+Join game attempt for room: test room
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:36:in `join_game'
+Room current players: 1
+Room max players: 2
+Player params: {"name"=>"chris2"}
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:12:in `full?'
+  [1m[36mPlayer Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "players" WHERE "players"."name" = 'chris2' AND "players"."game_room_id" = 31 LIMIT 1 /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:48:in `join_game'
+Player valid? true
+  [1m[36mCACHE Player Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "players" WHERE "players"."name" = 'chris2' AND "players"."game_room_id" = 31 LIMIT 1[0m
+  ↳ app/controllers/game_controller.rb:49:in `join_game'
+  [1m[36mCACHE Player Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "players" WHERE "players"."name" = 'chris2' AND "players"."game_room_id" = 31 LIMIT 1[0m
+  ↳ app/controllers/game_controller.rb:51:in `join_game'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:51:in `join_game'
+  [1m[36mPlayer Create (0.5ms)[0m  [1m[32mINSERT INTO "players" ("game_room_id", "name", "score", "created_at", "updated_at") VALUES (31, 'chris2', 0, '2025-06-27 19:40:07.730079', '2025-06-27 19:40:07.730079') RETURNING "id" /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:51:in `join_game'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='join_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:51:in `join_game'
+Player saved successfully with ID: 54
+Redirected to http://127.0.0.1:3000/game/waiting/EWL1L3/54
+Completed 302 Found in 41ms (ActiveRecord: 1.5ms (7 queries, 3 cached) | GC: 0.7ms)
+
+
+Started GET "/game/waiting/EWL1L3/54" for 127.0.0.1 at 2025-06-27 15:40:07 -0400
+Processing by GameController#waiting_room as TURBO_STREAM
+  Parameters: {"room_code"=>"EWL1L3", "player_id"=>"54"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:61:in `waiting_room'
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 AND "players"."id" = 54 LIMIT 1 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:62:in `waiting_room'
+  Rendering layout layouts/application.html.erb
+  Rendering game/waiting_room.html.erb within layouts/application
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/waiting_room.html.erb:26
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/waiting_room.html.erb:32
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+  Rendered game/waiting_room.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.5ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 1.6ms | ActiveRecord: 0.2ms (5 queries, 1 cached) | GC: 0.0ms)
+
+
+Started GET "/game/waiting/EWL1L3/53" for 127.0.0.1 at 2025-06-27 15:40:10 -0400
+Processing by GameController#waiting_room as HTML
+  Parameters: {"room_code"=>"EWL1L3", "player_id"=>"53"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:61:in `waiting_room'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 AND "players"."id" = 53 LIMIT 1 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:62:in `waiting_room'
+  Rendering layout layouts/application.html.erb
+  Rendering game/waiting_room.html.erb within layouts/application
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/waiting_room.html.erb:26
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 /*action='waiting_room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/waiting_room.html.erb:32
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+  Rendered game/waiting_room.html.erb within layouts/application (Duration: 1.5ms | GC: 0.2ms)
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.2ms)
+Completed 200 OK in 34ms (Views: 2.3ms | ActiveRecord: 0.2ms (5 queries, 1 cached) | GC: 0.2ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 15:40:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started GET "/game/status/EWL1L3" for 127.0.0.1 at 2025-06-27 15:40:10 -0400
+Processing by GameController#game_status as */*
+  Parameters: {"room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:85:in `game_status'
+Game status check for room: test room
+Room status: 
+  [1m[36mPlayer Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:89:in `game_status'
+Players count: 2
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/controllers/game_controller.rb:93:in `game_status'
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+Returning JSON: {:status=>"waiting", :players_count=>2, :max_players=>2, :can_start=>true}
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 0.2ms (4 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/game/room/EWL1L3?player_id=53" for 127.0.0.1 at 2025-06-27 15:40:11 -0400
+Processing by GameController#room as HTML
+  Parameters: {"player_id"=>"53", "room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:66:in `room'
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 AND "players"."id" = 53 LIMIT 1 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:69:in `room'
+  Rendering layout layouts/application.html.erb
+  Rendering game/room.html.erb within layouts/application
+  [1m[36mPlayer Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/room.html.erb:12
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 ORDER BY "players"."id" ASC LIMIT 1 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/room.html.erb:74
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/room.html.erb:97
+  Rendered game/room.html.erb within layouts/application (Duration: 4.0ms | GC: 0.5ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.5ms)
+Completed 200 OK in 43ms (Views: 4.3ms | ActiveRecord: 0.3ms (6 queries, 1 cached) | GC: 0.7ms)
+
+
+Started GET "/.well-known/appspecific/com.chrome.devtools.json" for 127.0.0.1 at 2025-06-27 15:40:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/.well-known/appspecific/com.chrome.devtools.json"):
+  
+Started POST "/game/start/EWL1L3?player_id=53" for 127.0.0.1 at 2025-06-27 15:40:12 -0400
+Processing by GameController#start_game as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "player_id"=>"53", "room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='start_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:74:in `start_game'
+  [1m[36mPlayer Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='start_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='start_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:77:in `start_game'
+  [1m[36mGameRoom Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "game_rooms" WHERE "game_rooms"."name" = 'test room' AND "game_rooms"."id" != 31 LIMIT 1 /*action='start_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:77:in `start_game'
+  [1m[36mGameRoom Update (0.0ms)[0m  [1m[33mUPDATE "game_rooms" SET "status" = 'playing', "updated_at" = '2025-06-27 19:40:12.379872' WHERE "game_rooms"."id" = 31 /*action='start_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:77:in `start_game'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='start_game',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:77:in `start_game'
+Redirected to http://127.0.0.1:3000/game/room/EWL1L3?player_id=53
+Completed 302 Found in 40ms (ActiveRecord: 0.8ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/game/room/EWL1L3?player_id=53" for 127.0.0.1 at 2025-06-27 15:40:12 -0400
+Processing by GameController#room as TURBO_STREAM
+  Parameters: {"player_id"=>"53", "room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:66:in `room'
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 AND "players"."id" = 53 LIMIT 1 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:69:in `room'
+  Rendering layout layouts/application.html.erb
+  Rendering game/room.html.erb within layouts/application
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/room.html.erb:12
+  [1m[36mPlayer Load (0.0ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 /*action='room',application='FruitBox',controller='game'*/[0m
+  ↳ app/views/game/room.html.erb:97
+  Rendered game/room.html.erb within layouts/application (Duration: 0.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 1.3ms | GC: 0.0ms)
+Completed 200 OK in 23ms (Views: 1.4ms | ActiveRecord: 0.2ms (4 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/game/board/EWL1L3?player_id=53" for 127.0.0.1 at 2025-06-27 15:40:12 -0400
+Processing by GameController#get_board as */*
+  Parameters: {"player_id"=>"53", "room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:103:in `get_board'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 AND "players"."id" = 53 LIMIT 1 /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:104:in `get_board'
+  [1m[36mGameBoard Load (0.4ms)[0m  [1m[34mSELECT "game_boards".* FROM "game_boards" WHERE "game_boards"."room_code" = 'EWL1L3' ORDER BY "game_boards"."created_at" DESC LIMIT 1 /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_board.rb:6:in `current_board'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_board.rb:12:in `create_new_board'
+  [1m[36mGameBoard Create (1.1ms)[0m  [1m[32mINSERT INTO "game_boards" ("room_code", "board_state", "created_at") VALUES ('EWL1L3', '[[{"fruit":"🍎","value":1},{"fruit":"🍎","value":6},{"fruit":"🍎","value":2},{"fruit":"🍎","value":9},{"fruit":"🍎","value":4},{"fruit":"🍎","value":9},{"fruit":"🍎","value":7},{"fruit":"🍎","value":7},{"fruit":"🍎","value":2},{"fruit":"🍎","value":7}],[{"fruit":"🍎","value":4},{"fruit":"🍎","value":3},{"fruit":"🍎","value":7},{"fruit":"🍎","value":4},{"fruit":"🍎","value":5},{"fruit":"🍎","value":9},{"fruit":"🍎","value":7},{"fruit":"🍎","value":5},{"fruit":"🍎","value":9},{"fruit":"🍎","value":9}],[{"fruit":"🍎","value":9},{"fruit":"🍎","value":2},{"fruit":"🍎","value":7},{"fruit":"🍎","value":4},{"fruit":"🍎","value":7},{"fruit":"🍎","value":1},{"fruit":"🍎","value":1},{"fruit":"🍎","value":9},{"fruit":"🍎","value":3},{"fruit":"🍎","value":7}],[{"fruit":"🍎","value":7},{"fruit":"🍎","value":3},{"fruit":"🍎","value":1},{"fruit":"🍎","value":5},{"fruit":"🍎","value":1},{"fruit":"🍎","value":1},{"fruit":"🍎","value":3},{"fruit":"🍎","value":6},{"fruit":"🍎","value":6},{"fruit":"🍎","value":3}],[{"fruit":"🍎","value":5},{"fruit":"🍎","value":7},{"fruit":"🍎","value":9},{"fruit":"🍎","value":2},{"fruit":"🍎","value":9},{"fruit":"🍎","value":4},{"fruit":"🍎","value":5},{"fruit":"🍎","value":3},{"fruit":"🍎","value":1},{"fruit":"🍎","value":4}],[{"fruit":"🍎","value":6},{"fruit":"🍎","value":5},{"fruit":"🍎","value":8},{"fruit":"🍎","value":9},{"fruit":"🍎","value":5},{"fruit":"🍎","value":4},{"fruit":"🍎","value":1},{"fruit":"🍎","value":5},{"fruit":"🍎","value":1},{"fruit":"🍎","value":6}],[{"fruit":"🍎","value":8},{"fruit":"🍎","value":6},{"fruit":"🍎","value":5},{"fruit":"🍎","value":6},{"fruit":"🍎","value":6},{"fruit":"🍎","value":8},{"fruit":"🍎","value":2},{"fruit":"🍎","value":7},{"fruit":"🍎","value":8},{"fruit":"🍎","value":4}],[{"fruit":"🍎","value":2},{"fruit":"🍎","value":6},{"fruit":"🍎","value":8},{"fruit":"🍎","value":2},{"fruit":"🍎","value":4},{"fruit":"🍎","value":1},{"fruit":"🍎","value":7},{"fruit":"🍎","value":8},{"fruit":"🍎","value":7},{"fruit":"🍎","value":8}],[{"fruit":"🍎","value":8},{"fruit":"🍎","value":9},{"fruit":"🍎","value":2},{"fruit":"🍎","value":4},{"fruit":"🍎","value":4},{"fruit":"🍎","value":6},{"fruit":"🍎","value":2},{"fruit":"🍎","value":5},{"fruit":"🍎","value":1},{"fruit":"🍎","value":2}],[{"fruit":"🍎","value":5},{"fruit":"🍎","value":1},{"fruit":"🍎","value":1},{"fruit":"🍎","value":8},{"fruit":"🍎","value":1},{"fruit":"🍎","value":9},{"fruit":"🍎","value":7},{"fruit":"🍎","value":8},{"fruit":"🍎","value":7},{"fruit":"🍎","value":4}]]', '2025-06-27 19:40:12.523954') RETURNING "id" /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_board.rb:12:in `create_new_board'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/game_board.rb:12:in `create_new_board'
+  [1m[36mPlayerGameState Load (0.1ms)[0m  [1m[34mSELECT "player_game_states".* FROM "player_game_states" WHERE "player_game_states"."player_id" = 53 AND "player_game_states"."room_code" = 'EWL1L3' ORDER BY "player_game_states"."created_at" DESC LIMIT 1 /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:9:in `current_state'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:23:in `create_initial_state'
+  [1m[36mPlayer Load (0.8ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."id" = 53 LIMIT 1 /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:23:in `create_initial_state'
+  [1m[36mPlayerGameState Create (0.1ms)[0m  [1m[32mINSERT INTO "player_game_states" ("player_id", "room_code", "board_state", "score", "time_remaining", "created_at", "updated_at", "finished", "final_score", "needs_new_board") VALUES (53, 'EWL1L3', '[[{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":7,"collected":false}],[{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":3,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":9,"collected":false}],[{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":3,"collected":false},{"fruit":"🍎","value":7,"collected":false}],[{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":3,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":3,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":3,"collected":false}],[{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":3,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":4,"collected":false}],[{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":6,"collected":false}],[{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":4,"collected":false}],[{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":8,"collected":false}],[{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":2,"collected":false}],[{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":4,"collected":false}]]', 0, 90, '2025-06-27 19:40:12.533068', '2025-06-27 19:40:12.533068', NULL, NULL, 0) RETURNING "id" /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:23:in `create_initial_state'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='get_board',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:23:in `create_initial_state'
+Completed 200 OK in 95ms (Views: 0.3ms | ActiveRecord: 3.1ms (7 queries, 0 cached) | GC: 5.1ms)
+
+
+Started POST "/game/collect_apples/EWL1L3?player_id=53" for 127.0.0.1 at 2025-06-27 15:40:17 -0400
+Processing by GameController#collect_apples as */*
+  Parameters: {"positions"=>[[1, 1], [1, 2]], "player_id"=>"53", "room_code"=>"EWL1L3", "game"=>{"positions"=>[[1, 1], [1, 2]]}}
+  [1m[36mGameRoom Load (0.2ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='collect_apples',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:146:in `collect_apples'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 AND "players"."id" = 53 LIMIT 1 /*action='collect_apples',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:147:in `collect_apples'
+  [1m[36mPlayerGameState Load (0.1ms)[0m  [1m[34mSELECT "player_game_states".* FROM "player_game_states" WHERE "player_game_states"."player_id" = 53 AND "player_game_states"."room_code" = 'EWL1L3' ORDER BY "player_game_states"."created_at" DESC LIMIT 1 /*action='collect_apples',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:9:in `current_state'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='collect_apples',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:73:in `collect_apples'
+  [1m[36mPlayerGameState Update (0.5ms)[0m  [1m[33mUPDATE "player_game_states" SET "board_state" = '[[{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":7,"collected":false}],[{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":3,"collected":true},{"fruit":"🍎","value":7,"collected":true},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":9,"collected":false}],[{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":3,"collected":false},{"fruit":"🍎","value":7,"collected":false}],[{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":3,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":3,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":3,"collected":false}],[{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":3,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":4,"collected":false}],[{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":6,"collected":false}],[{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":4,"collected":false}],[{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":8,"collected":false}],[{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":4,"collected":false},{"fruit":"🍎","value":6,"collected":false},{"fruit":"🍎","value":2,"collected":false},{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":2,"collected":false}],[{"fruit":"🍎","value":5,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":1,"collected":false},{"fruit":"🍎","value":9,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":8,"collected":false},{"fruit":"🍎","value":7,"collected":false},{"fruit":"🍎","value":4,"collected":false}]]', "score" = 2, "updated_at" = '2025-06-27 19:40:17.336010' WHERE "player_game_states"."id" = 31 /*action='collect_apples',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:73:in `collect_apples'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='collect_apples',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:73:in `collect_apples'
+Completed 200 OK in 47ms (Views: 0.2ms | ActiveRecord: 1.2ms (4 queries, 0 cached) | GC: 0.3ms)
+
+
+Started POST "/game/player_finished/EWL1L3?player_id=53" for 127.0.0.1 at 2025-06-27 15:40:18 -0400
+Processing by GameController#player_finished as */*
+  Parameters: {"player_id"=>"53", "room_code"=>"EWL1L3", "game"=>{}}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='player_finished',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:179:in `player_finished'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 AND "players"."id" = 53 LIMIT 1 /*action='player_finished',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:180:in `player_finished'
+  [1m[36mPlayerGameState Load (0.1ms)[0m  [1m[34mSELECT "player_game_states".* FROM "player_game_states" WHERE "player_game_states"."player_id" = 53 AND "player_game_states"."room_code" = 'EWL1L3' ORDER BY "player_game_states"."created_at" DESC LIMIT 1 /*action='player_finished',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:9:in `current_state'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='player_finished',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:187:in `player_finished'
+  [1m[36mPlayerGameState Update (0.7ms)[0m  [1m[33mUPDATE "player_game_states" SET "updated_at" = '2025-06-27 19:40:18.137505', "finished" = 1, "final_score" = 2 WHERE "player_game_states"."id" = 31 /*action='player_finished',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:187:in `player_finished'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='player_finished',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:187:in `player_finished'
+  [1m[36mPlayer Load (0.1ms)[0m  [1m[34mSELECT "players".* FROM "players" WHERE "players"."game_room_id" = 31 /*action='player_finished',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:190:in `all?'
+  [1m[36mPlayerGameState Load (0.1ms)[0m  [1m[34mSELECT "player_game_states".* FROM "player_game_states" WHERE "player_game_states"."player_id" = 53 AND "player_game_states"."room_code" = 'EWL1L3' ORDER BY "player_game_states"."created_at" DESC LIMIT 1 /*action='player_finished',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:9:in `current_state'
+  [1m[36mPlayerGameState Load (0.0ms)[0m  [1m[34mSELECT "player_game_states".* FROM "player_game_states" WHERE "player_game_states"."player_id" = 54 AND "player_game_states"."room_code" = 'EWL1L3' ORDER BY "player_game_states"."created_at" DESC LIMIT 1 /*action='player_finished',application='FruitBox',controller='game'*/[0m
+  ↳ app/models/player_game_state.rb:9:in `current_state'
+Completed 200 OK in 44ms (Views: 0.1ms | ActiveRecord: 1.3ms (7 queries, 0 cached) | GC: 0.9ms)
+
+
+Started GET "/game/status/EWL1L3" for 127.0.0.1 at 2025-06-27 15:40:21 -0400
+Processing by GameController#game_status as */*
+  Parameters: {"room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:85:in `game_status'
+Game status check for room: test room
+Room status: playing
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:89:in `game_status'
+Players count: 2
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/controllers/game_controller.rb:93:in `game_status'
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+Returning JSON: {:status=>"playing", :players_count=>2, :max_players=>2, :can_start=>true}
+Completed 200 OK in 36ms (Views: 0.1ms | ActiveRecord: 0.2ms (4 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/game/status/EWL1L3" for 127.0.0.1 at 2025-06-27 15:40:24 -0400
+Processing by GameController#game_status as */*
+  Parameters: {"room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:85:in `game_status'
+Game status check for room: test room
+Room status: playing
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:89:in `game_status'
+Players count: 2
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/controllers/game_controller.rb:93:in `game_status'
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+Returning JSON: {:status=>"playing", :players_count=>2, :max_players=>2, :can_start=>true}
+Completed 200 OK in 19ms (Views: 0.1ms | ActiveRecord: 0.2ms (4 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/game/status/EWL1L3" for 127.0.0.1 at 2025-06-27 15:40:27 -0400
+Processing by GameController#game_status as */*
+  Parameters: {"room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:85:in `game_status'
+Game status check for room: test room
+Room status: playing
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:89:in `game_status'
+Players count: 2
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/controllers/game_controller.rb:93:in `game_status'
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+Returning JSON: {:status=>"playing", :players_count=>2, :max_players=>2, :can_start=>true}
+Completed 200 OK in 38ms (Views: 0.1ms | ActiveRecord: 0.2ms (4 queries, 2 cached) | GC: 1.8ms)
+
+
+Started GET "/game/status/EWL1L3" for 127.0.0.1 at 2025-06-27 15:40:30 -0400
+Processing by GameController#game_status as */*
+  Parameters: {"room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:85:in `game_status'
+Game status check for room: test room
+Room status: playing
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:89:in `game_status'
+Players count: 2
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/controllers/game_controller.rb:93:in `game_status'
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+Returning JSON: {:status=>"playing", :players_count=>2, :max_players=>2, :can_start=>true}
+Completed 200 OK in 33ms (Views: 0.1ms | ActiveRecord: 0.1ms (4 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/game/status/EWL1L3" for 127.0.0.1 at 2025-06-27 15:40:33 -0400
+Processing by GameController#game_status as */*
+  Parameters: {"room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:85:in `game_status'
+Game status check for room: test room
+Room status: playing
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:89:in `game_status'
+Players count: 2
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/controllers/game_controller.rb:93:in `game_status'
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+Returning JSON: {:status=>"playing", :players_count=>2, :max_players=>2, :can_start=>true}
+Completed 200 OK in 34ms (Views: 0.1ms | ActiveRecord: 0.1ms (4 queries, 2 cached) | GC: 0.0ms)
+
+
+Started GET "/game/status/EWL1L3" for 127.0.0.1 at 2025-06-27 15:40:36 -0400
+Processing by GameController#game_status as */*
+  Parameters: {"room_code"=>"EWL1L3"}
+  [1m[36mGameRoom Load (0.1ms)[0m  [1m[34mSELECT "game_rooms".* FROM "game_rooms" WHERE "game_rooms"."room_code" = 'EWL1L3' LIMIT 1 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:85:in `game_status'
+Game status check for room: test room
+Room status: playing
+  [1m[36mPlayer Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31 /*action='game_status',application='FruitBox',controller='game'*/[0m
+  ↳ app/controllers/game_controller.rb:89:in `game_status'
+Players count: 2
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/controllers/game_controller.rb:93:in `game_status'
+  [1m[36mCACHE Player Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "players" WHERE "players"."game_room_id" = 31[0m
+  ↳ app/models/game_room.rb:16:in `can_start?'
+Returning JSON: {:status=>"playing", :players_count=>2, :max_players=>2, :can_start=>true}
+Completed 200 OK in 32ms (Views: 0.1ms | ActiveRecord: 0.1ms (4 queries, 2 cached) | GC: 0.0ms)
+
+
